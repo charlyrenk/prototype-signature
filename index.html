@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>Signature Pad demo</title>
@@ -12,7 +13,7 @@
 
   <link rel="stylesheet" href="css/signature-pad.css">
 
-  
+
   <!--[if IE]>
     <link rel="stylesheet" type="text/css" href="css/ie9.css">
   <![endif]-->
@@ -22,66 +23,78 @@
     _gaq.push(['_setAccount', 'UA-39365077-1']);
     _gaq.push(['_trackPageview']);
 
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    (function () {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') +
+        '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
     })();
-  </script>
-  
-</head>
-<body onselectstart="return false">
-
-
-<script type='text/javascript'>
-
-  function main()
-  {
-      var inputFileToLoad = document.createElement("input");
-      inputFileToLoad.type = "file";
-      inputFileToLoad.id = "inputFileToLoad";
-      document.body.appendChild(inputFileToLoad);
-  
-      var buttonLoadFile = document.createElement("button");
-      buttonLoadFile.onclick = loadImageFileAsURL;
-      buttonLoadFile.textContent = "Load Selected File";
-      document.body.appendChild(buttonLoadFile);
-  }
-  
-  function loadImageFileAsURL()
-  {
-      var filesSelected = document.getElementById("inputFileToLoad").files;
-      if (filesSelected.length > 0)
-      {
-          var fileToLoad = filesSelected[0];
-  
-          if (fileToLoad.type.match("image.*"))
-          {
-              var fileReader = new FileReader();
-              fileReader.onload = function(fileLoadedEvent) 
-              {
-                  var imageLoaded = document.createElement("img");
-                  imageLoaded.src = fileLoadedEvent.target.result;
-                  document.body.appendChild(imageLoaded);
-              };
-              fileReader.readAsDataURL(fileToLoad);
-          }
-      }
-  }
-  
-  main();
-  
   </script>
   <script src="./path/to/dropzone.js"></script>
 
-  <form action="/file-upload"
-  class="dropzone"
-  id="my-awesome-dropzone"></form>
+</head>
+
+<body onselectstart="return false">
+
+
+  <!-- Following test script for image file uploads -->
+
+  <script type='text/javascript'>
+
+    function main()
+    {
+        var inputFileToLoad = document.createElement("input");
+        inputFileToLoad.type = "file";
+        inputFileToLoad.id = "inputFileToLoad";
+        document.body.appendChild(inputFileToLoad);
+    
+        var buttonLoadFile = document.createElement("button");
+        buttonLoadFile.onclick = loadImageFileAsURL;
+        buttonLoadFile.textContent = "Load Selected File";
+        document.body.appendChild(buttonLoadFile);
+    }
+    
+    function loadImageFileAsURL()
+    {
+        var filesSelected = document.getElementById("inputFileToLoad").files;
+        if (filesSelected.length > 0)
+        {
+            var fileToLoad = filesSelected[0];
+    
+            if (fileToLoad.type.match("image.*"))
+            {
+                var fileReader = new FileReader();
+                fileReader.onload = function(fileLoadedEvent) 
+                {
+                    var imageLoaded = document.createElement("img");
+                    imageLoaded.className = "sigImage";
+                    imageLoaded.src = fileLoadedEvent.target.result;
+                    document.body.div.appendChild(imageLoaded);
+                    // var canvasLoaded = document.createElement("canvas");
+                    // canvasLoaded.className = "canvasSpot";
+                    // document.body.appendChild(canvasLoaded);
+                    
+                    
+                };
+                fileReader.readAsDataURL(fileToLoad);
+            }
+        }
+    }
+    
+    main();
+    
+    </script>
+
+    <!-- End of image script -->
+
 
   <div id="signature-pad" class="signature-pad">
-    
+
     <div class="signature-pad--body">
-      <img class="sigImage" src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Map_of_USA_with_state_names.svg">
+      <!-- <img class="sigImage" src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Map_of_USA_with_state_names.svg"> -->
       <canvas></canvas>
     </div>
 
@@ -107,4 +120,5 @@
   <script src="js/signature_pad.js"></script>
   <script src="js/app.js"></script>
 </body>
+
 </html>
