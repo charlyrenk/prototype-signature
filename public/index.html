@@ -17,9 +17,12 @@
   <script src="vendors/angular-aria.min.js" charset="utf-8"></script>
   <script src="vendors/angular-messages.min.js" charset="utf-8"></script>
   <script src="vendors/angular-material.min.js" charset="utf-8"></script>
-  
 
-  <script type="text/javascript" src="scripts/client.js"></script>  
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/signature_pad/1.5.3/signature_pad.min.js"></script>
+
+
+  <script type="text/javascript" src="scripts/client.js"></script>
 
   <!-- <script src="scripts/signature_pad_js/signature_pad.js"></script>
   <script src="scripts/signature_pad_js/app.js"></script> -->
@@ -27,22 +30,27 @@
   <script src="scripts/controllers/prototype.controller.js" charset="utf-8"></script>
 
 
-  
+
+
+
 
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body ng-app="myApp" ng-controller="PrototypeController as pc">
 
 
-    
-  <image ng-src= "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Blank_US_map_borders.svg/2000px-Blank_US_map_borders.svg.png" flex="100" flex-md"50"> 
-  
-  <md-button class="md-mini mapPoint" class-sm="md-mini" flex-xl="200"  ng-click="pc.showSignature($event)">+</md-button>
 
+  <image ng-src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Blank_US_map_borders.svg/2000px-Blank_US_map_borders.svg.png"
+    flex="100" flex-md "50">
+
+    <md-button class="md-mini mapPoint" class-sm="md-mini" flex-xl="200" ng-click="pc.showSignature($event)">+</md-button>
   
 </body>
 
+
+
+
+
 </html>
-
-
