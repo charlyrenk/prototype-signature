@@ -1,0 +1,49 @@
+.md-button.mapPoint{
+    font-size: 30px;
+    position: absolute;
+    left: 20%;
+    top: 10%;
+    color: blue;
+    display: inline-block;
+    cursor: pointer;
+    min-height: 15px;
+    min-width: 50px;
+    line-height: 20px;
+    overflow: hidden;
+    background: none;
+    
+  
+}
+
+
+@media (max-width: 1100px){
+    .md-button.mapPoint{
+    font-size: 20px;
+    top: 5%;
+    }
+}
+
+@media (max-width: 700px){
+    .md-button.mapPoint{
+    font-size: 15px;
+    top: 3%;
+    }
+}
+
+
+/* @media (min-width: 2330px){
+    .md-button.mapPoint{
+    top: 17%;
+    left: 17%
+    }
+} */
+
+/* .mapImage{
+    float: left;
+}
+
+.mapContainer ul li{
+    display:inline-block;
+
+     list-style:none; 
+} */
